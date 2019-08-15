@@ -30,13 +30,13 @@ ll rnd(ll x, ll y) { static uniform_int_distribution<ll> d; return d(mmtw) % (y 
 template <class T> T fact(T n) { if (n == 1) return 1; return n * fact(n - 1); }
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-vector<pii> a;
+vector<pll> a;
 
-ll prod(pii a, pii b) {
+ll prod(pll a, pll b) {
     return a.f * b.s - a.s * b.f;
 }
 
-bool cmp(pii p, pii q) {
+bool cmp(pll p, pll q) {
     ll pr = prod({p.f - a[0].f, p.s - a[0].s}, {q.f - a[0].f, q.s - a[0].s});
     if (pr > 0) {
         return true;
@@ -49,11 +49,11 @@ bool cmp(pii p, pii q) {
     }
 }
 
-inline pii get(pii a, pii b) {
+inline pll get(pll a, pll b) {
     return {b.f - a.f, b.s - a.s};
 }
 
-vector<pii> ans;
+vector<pll> ans;
 
 int main() {
     int n;
